@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Beast Burgers | Kota, burgers and chips</title>
+<meta name="description" content="The Beast Burgers: stacked-high kotas and burgers, grilled fresh. Explore the menu and order on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="prog"></div>
+<div class="hero-bg" id="herobg"></div>
+<canvas id="hero3d"></canvas>
+
+<nav id="nav">
+  <a class="brand" href="#top"><b>The</b> Beast<span>Burgers</span></a>
+  <div class="links">
+    <a href="#story">Our story</a><a href="#signature">Signature</a><a href="#menu">Menu</a><a href="#gallery">Gallery</a><a href="#reviews">Reviews</a><a href="#visit">Visit</a><a href="#reserve">Reserve</a>
+    <a class="cta" href="#menu">Order now</a>
+  </div>
+</nav>
+
+<header id="top" class="hero">
+  <div class="hero-in">
+    <p class="kicker"><i></i>Local kota and burger shop</p>
+    <h1 id="t" aria-label="The Beast Burgers"><span class="ln" id="l1">The Beast</span><span class="ln o" id="l2">Burgers</span></h1>
+    <p class="lede">Stacked high, grilled fresh and made for the neighbourhood. Kotas, burgers and chips that hit every time.</p>
+    <div class="acts"><a class="btn solid" href="#menu">Explore the menu</a><a class="btn" href="#reserve">Book a table</a></div>
+  </div>
+  <div class="scroll" aria-hidden="true"><span></span>Scroll</div>
+</header>
+
+<div class="tapes" aria-hidden="true">
+  <div class="tape a"><div id="tapeA"></div></div>
+  <div class="tape b"><div id="tapeB"></div></div>
+</div>
+
+<section id="story" class="wrap split">
+  <figure class="photo rvi" id="storyimg"></figure>
+  <div class="txt">
+    <h2>Our story</h2>
+    <div id="storytxt"></div>
+    <ul class="pts"><li>Grilled fresh to order</li><li>Big portions, fair prices</li><li>Fresh veg on every stack</li></ul>
+    <p class="sign" id="sign"></p>
+  </div>
+</section>
+
+<section id="signature" class="sig">
+  <div class="wrap">
+    <h2>Signature dishes</h2>
+    <p class="hint">Drag the wheel, or use the arrows, to spin through the beasts.</p>
+  </div>
+  <div class="stage" id="stage" tabindex="0" aria-label="Signature dishes wheel">
+    <canvas id="car3d"></canvas>
+    <div class="carfb" id="carfb"></div>
+  </div>
+  <div class="wrap cap">
+    <div class="cinfo"><h3 id="cn"></h3><p id="cd"></p></div>
+    <div class="cprice" id="cp"></div>
+    <div class="cact"><button class="btn solid" id="addsig" type="button">Add to order</button><div class="cbtn"><button id="prev" type="button" aria-label="Previous dish">&larr;</button><button id="next" type="button" aria-label="Next dish">&rarr;</button></div></div>
+  </div>
+</section>
+
+<section id="menu" class="wrap">
+  <div class="mhead"><h2>Explore our menu</h2><input id="q" type="search" placeholder="Search kota, burgers, chips" aria-label="Search the menu"></div>
+  <div class="tabs" id="tabs"></div>
+  <div class="mlist" id="list"></div>
+  <p class="note">Sample dishes and prices. The final menu is coming soon. Tap + to add to your order.</p>
+</section>
+
+<section id="gallery" class="wrap wide">
+  <h2>Food that speaks</h2>
+  <div class="gal" id="gal"></div>
+</section>
+
+<section id="reviews" class="wrap">
+  <h2>What customers say</h2>
+  <div class="rvs" id="rvs"></div>
+</section>
+
+<section id="visit" class="wrap visit">
+  <div>
+    <h2>Visit us <span id="badge" class="badge"></span></h2>
+    <p class="addr" id="addr"></p>
+    <div class="hrs" id="hrs"></div>
+    <p class="contact"><a id="call" href="#"></a><a id="wa" href="#">WhatsApp us</a><a id="mail" href="#"></a></p>
+  </div>
+  <div class="mapbox"><iframe title="The Beast Burgers on Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=The%20Beast%20Burgers&amp;output=embed"></iframe><a class="btn mapbtn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=The+Beast+Burgers">Open in Google Maps</a></div>
+</section>
+
+<section id="reserve" class="wrap reserve">
+  <div>
+    <h2>Reserve</h2>
+    <p>Booking a table, a pre-order for collection, or a table for the whole crew? Fill this in and we will confirm on WhatsApp. Already picked your food? Your order is added to the message automatically.</p>
+  </div>
+  <form id="f">
+    <label>Your name<input name="name" required autocomplete="name"></label>
+    <label>Phone number<input name="phone" type="tel" required autocomplete="tel"></label>
+    <div class="row"><label>Date<input name="date" type="date" required></label><label>Time<input name="time" type="time" required value="18:00"></label></div>
+    <div class="row"><label>Guests<input name="guests" type="number" min="1" required value="2"></label><label>I want to<select name="type"><option>Book a table</option><option>Pre-order for collection</option><option>Book for a group</option><option>Other</option></select></label></div>
+    <label>Anything we should know?<textarea name="msg" rows="3"></textarea></label>
+    <div class="fbtns"><button class="btn solid" type="submit">Book on WhatsApp</button><button class="btn" type="button" id="mailbtn">Book by email</button></div>
+  </form>
+</section>
+
+<footer id="foot">
+  <div class="wrap">
+    <div class="fcta"><h3>Hungry?<br><span>Feed the beast.</span></h3><a class="btn solid" href="#menu">Order now</a></div>
+    <div class="fgrid">
+      <div><p class="fabout">Local kota and burger shop. Stacked high, grilled fresh, made for the neighbourhood.</p><div class="fsoc" id="fsoc"></div></div>
+      <div><h4>Explore</h4><a href="#story">Our story</a><a href="#signature">Signature dishes</a><a href="#menu">Menu</a><a href="#gallery">Gallery</a><a href="#reserve">Reserve</a></div>
+      <div><h4>Find us</h4><p id="faddr"></p><a id="fcall" href="#"></a><a id="fmail" href="#"></a><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=The+Beast+Burgers">Get directions</a></div>
+      <div><h4>Opening hours</h4><div class="fhrs" id="fhrs"></div></div>
+    </div>
+    <div class="fword" aria-hidden="true">Beast</div>
+    <div class="fbot"><span>&copy; <span id="yr"></span> The Beast Burgers. All rights reserved.</span><span><a href="#">Privacy</a> <a href="#">Terms</a></span><a href="#" id="top2">Back to top</a></div>
+  </div>
+</footer>
+
+<button id="cartbar" class="cartbar" type="button" hidden><span id="cbn">0 items</span><b id="cbt">R 0</b><i>View order</i></button>
+<div id="dback"></div>
+<aside id="drawer" aria-hidden="true" aria-label="Your order">
+  <div class="dh"><h3>Your order</h3><button id="dx" type="button" aria-label="Close">&times;</button></div>
+  <div id="dl"></div>
+  <div class="dtot"><span>Total</span><b id="dt">R 0</b></div>
+  <form id="of">
+    <label>Your name<input name="name" required autocomplete="name"></label>
+    <label>Phone number<input name="phone" type="tel" required autocomplete="tel"></label>
+    <label>Collect or deliver?<select name="mode" id="mode"><option>Collect</option><option>Delivery</option></select></label>
+    <label id="addrrow" hidden>Delivery address<input name="address" autocomplete="street-address"></label>
+    <label>Notes (no onions, extra sauce...)<textarea name="note" rows="2"></textarea></label>
+    <button class="btn solid" type="submit">Send order on WhatsApp</button>
+    <p class="fine">Delivery fees are confirmed on WhatsApp.</p>
+  </form>
+</aside>
+
+<div id="lb" aria-hidden="true"><button id="lbx" aria-label="Close">&times;</button><div id="lbc"></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
